@@ -61,15 +61,15 @@ fun SplineView() {
             val path = Path().apply {
                 moveTo(points.first().x, points.first().y)
 
-                for (i in 0 until points.lastIndex - 1 step 2) {
-                    val p0 = points[i]
+                for (i in 0 until points.lastIndex - 2 step 3) {
                     val p1 = points[i + 1]
                     val p2 = points[i + 2]
+                    val p3 = points[i + 3]
 
                     cubicTo(
-                        p0.x, p0.y,
                         p1.x, p1.y,
-                        p2.x, p2.y
+                        p2.x, p2.y,
+                        p3.x, p3.y
                     )
                 }
             }
